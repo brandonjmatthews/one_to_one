@@ -1,0 +1,11 @@
+.DS_Store
+
+build/darwin/ModuleCache
+build/darwin/one_to_one/info.plist
+build/darwin/one_to_one/Logs
+build/darwin/one_to_one/Build/Intermediates
+
+node_modules
+npm-debug.log
+
+test/*.app
