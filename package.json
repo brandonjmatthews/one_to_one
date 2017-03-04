@@ -1,0 +1,22 @@
+{
+  "name": "one_to_one",
+  "version": "0.1.0",
+  "description": "Electron module to collect the physical display information using native binaries.",
+  "main": "src/js/one_to_one.js",
+  "scripts": {
+    "buildTest": "node test/build.js"
+  },
+  "keywords": [
+    "dpi",
+    "dpcm",
+    "ppi",
+    "ppcm",
+    "display",
+    "physical"
+  ],
+  "devDependencies": {
+    "electron": "^1.6.1"
+  },
+  "author": "Brandon Matthews",
+  "license": "MIT"
+}
