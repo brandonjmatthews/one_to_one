@@ -15,7 +15,7 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // Check for display ID parameter
         if (argc != 2) {
-            printf("real-display requires a screenID as the first argument");
+            printf("one_to_one requires a screenID as the first argument");
             return -1;
         }
         
