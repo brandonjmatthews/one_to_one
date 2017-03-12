@@ -24,6 +24,7 @@ var oto_util = {
      * Split display information string into components
      */
     splitDisplayInformation: function(infoString) {
+        console.log(infoString);
         var splitInfo = infoString.split(',');
         return {
             pixel: {
@@ -35,8 +36,8 @@ var oto_util = {
                 height: parseFloat(splitInfo[3]),
             },
             ppcm: {
-                horizontal: parseFloat(splitInfo[4]),
-                vertical: parseFloat(splitInfo[5]),
+                horizontal: parseFloat(splitInfo[4] * 10),
+                vertical: parseFloat(splitInfo[5] * 10),
             }
         };
     }
@@ -45,6 +46,7 @@ var oto_util = {
 var oto_core = {
     supported: {
         darwin: {name: 'darwin', path: '../../build/darwin/one_to_one/Build/Products/Debug/one_to_one'},
+        win32: {name: 'win32', path: '../../build/win32/one_to_one.exe'}
     },
     /**
      * Gets information for a display using native binary
@@ -61,11 +63,18 @@ var oto_core = {
                     ).toString()
                 );
                 break;
+            case oto_core.supported.win32.name:
+                displayInformation = oto_util.splitDisplayInformation(
+                    execSync(
+                        path.resolve(__dirname, oto_core.supported.win32.path) + " " + display.id
+                    ).toString()
+                );
+                break;
             default:
                 displayInformation = {}
                 displayInformation.ppcm = {
                     horizontal: 28.34,
-                    vertical: 28.834,
+                    vertical: 28.34,
                 };
                 displayInformation.physical = {
                     width: display.size.width / displayInformation.ppcm.width,
