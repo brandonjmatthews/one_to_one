@@ -1,11 +1,6 @@
 .DS_Store
 .vscode
 
-build/darwin/ModuleCache
-build/darwin/one_to_one/info.plist
-build/darwin/one_to_one/Logs
-build/darwin/one_to_one/Build/Intermediates
-
 src/win32/one_to_one/bin
 src/win32/one_to_one/obj
 

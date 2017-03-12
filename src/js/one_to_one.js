@@ -45,7 +45,7 @@ var oto_util = {
 
 var oto_core = {
     supported: {
-        darwin: {name: 'darwin', path: '../../build/darwin/one_to_one/Build/Products/Debug/one_to_one'},
+        darwin: {name: 'darwin', path: '../../build/darwin/one_to_one'},
         win32: {name: 'win32', path: '../../build/win32/one_to_one.exe'}
     },
     /**
