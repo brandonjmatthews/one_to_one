@@ -24,7 +24,6 @@ var oto_util = {
      * Split display information string into components
      */
     splitDisplayInformation: function(infoString) {
-        console.log(infoString);
         var splitInfo = infoString.split(',');
         return {
             pixel: {
