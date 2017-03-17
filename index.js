@@ -35,6 +35,7 @@ var oto_util = {
                 height: parseFloat(splitInfo[3]),
             },
             ppcm: {
+                // The dimensions are returned as mm so we need to convert the ppmm to ppcm
                 horizontal: parseFloat(splitInfo[4] * 10),
                 vertical: parseFloat(splitInfo[5] * 10),
             }
