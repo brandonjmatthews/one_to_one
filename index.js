@@ -45,8 +45,8 @@ var oto_util = {
 
 var oto_core = {
     supported: {
-        darwin: {name: 'darwin', path: '../../build/darwin/one_to_one'},
-        win32: {name: 'win32', path: '../../build/win32/one_to_one.exe'}
+        darwin: {name: 'darwin', path: './build/darwin/one_to_one'},
+        win32: {name: 'win32', path: './build/win32/one_to_one.exe'}
     },
     /**
      * Gets information for a display using native binary
@@ -54,19 +54,22 @@ var oto_core = {
      getDisplayInformation: function(display) {
         // If on a supported system use our native binary to do the work, otherwise fall back
         // to a default
+        
         var displayInformation = {};
+        var builtPath = __filename.substring(0, __filename.indexOf('index.js') - 1);
         switch(os.platform()) {
             case oto_core.supported.darwin.name:
+              
                 displayInformation = oto_util.splitDisplayInformation(
                     execSync(
-                        path.resolve(__dirname, oto_core.supported.darwin.path) + " " + display.id
+                        path.resolve(builtPath, oto_core.supported.darwin.path) + " " + display.id
                     ).toString()
                 );
                 break;
             case oto_core.supported.win32.name:
                 displayInformation = oto_util.splitDisplayInformation(
                     execSync(
-                        path.resolve(__dirname, oto_core.supported.win32.path) + " " + display.id
+                        path.resolve(builtPath, oto_core.supported.win32.path) + " " + display.id
                     ).toString()
                 );
                 break;
