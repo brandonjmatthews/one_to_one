@@ -1,4 +1,4 @@
-var oto = require('../src/js/one_to_one');
+var oto = require('../index.js');
 console.log('loaded');
 function resizeRuler() {
     console.log(oto);
