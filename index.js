@@ -57,6 +57,12 @@ var oto_core = {
         
         var displayInformation = {};
         var builtPath = __filename.substring(0, __filename.indexOf('index.js') - 1);
+
+        // Workaround for .asar.unpacked problem in built apps, TODO: Look into this properly later.
+        if (builtPath.indexOf('.asar') !== -1) {
+            builtPath = builtPath.replace('.asar', '.asar.unpacked');
+        }
+
         switch(os.platform()) {
             case oto_core.supported.darwin.name:
               
