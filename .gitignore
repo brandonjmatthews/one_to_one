@@ -1,8 +1,7 @@
 .DS_Store
 .vscode
 
-src/win32/one_to_one/bin
-src/win32/one_to_one/obj
+build/
 
 node_modules
 npm-debug.log
