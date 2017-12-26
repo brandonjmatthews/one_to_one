@@ -1,9 +1,11 @@
-var electron = require('electron');
-var execSync = require('child_process').execSync;
-var path = require('path');
-var os = require('os');
+'use strict';
+const electron = require('electron');
+const path = require('path');
+const os = require('os');
 
-var oto_util = {
+const OTO_Addon = require('bindings')('OneToOne');
+
+const oto_util = {
     /**
      * Converts value in cm to value in inches
      */
@@ -19,35 +21,13 @@ var oto_util = {
         // main process. 
         return electron.screen.getDisplayMatching(electron.remote.getCurrentWindow().getBounds());
     },
-
-    /**
-     * Split display information string into components
-     */
-    splitDisplayInformation: function(infoString) {
-        var splitInfo = infoString.split(',');
-        return {
-            pixel: {
-                width: parseFloat(splitInfo[0]),
-                height: parseFloat(splitInfo[1]),
-            },
-            physical: {
-                width: parseFloat(splitInfo[2]),
-                height: parseFloat(splitInfo[3]),
-            },
-            ppcm: {
-                // The dimensions are returned as mm so we need to convert the ppmm to ppcm
-                horizontal: parseFloat(splitInfo[4] * 10),
-                vertical: parseFloat(splitInfo[5] * 10),
-            }
-        };
-    }
 };
 
-var oto_core = {
-    supported: {
-        darwin: {name: 'darwin', path: './build/darwin/one_to_one'},
-        win32: {name: 'win32', path: './build/win32/one_to_one.exe'}
-    },
+const oto_core = {
+    supported: [
+        'darwin',
+        'win32',
+    ],
     /**
      * Gets information for a display using native binary
      */
@@ -55,53 +35,32 @@ var oto_core = {
         // If on a supported system use our native binary to do the work, otherwise fall back
         // to a default
         
-        var displayInformation = {};
-        var builtPath = __filename.substring(0, __filename.indexOf('index.js') - 1);
+        let displayInformation = {};
 
-        // Workaround for .asar.unpacked problem in built apps, TODO: Look into this properly later.
-        if (builtPath.indexOf('.asar') !== -1) {
-            builtPath = builtPath.replace('.asar', '.asar.unpacked');
-        }
-
-        switch(os.platform()) {
-            case oto_core.supported.darwin.name:
-              
-                displayInformation = oto_util.splitDisplayInformation(
-                    execSync(
-                        path.resolve(builtPath, oto_core.supported.darwin.path) + " " + display.id
-                    ).toString()
-                );
-                break;
-            case oto_core.supported.win32.name:
-                displayInformation = oto_util.splitDisplayInformation(
-                    execSync(
-                        path.resolve(builtPath, oto_core.supported.win32.path) + " " + display.id
-                    ).toString()
-                );
-                break;
-            default:
-                displayInformation = {}
-                displayInformation.ppcm = {
-                    horizontal: 28.34,
-                    vertical: 28.34,
-                };
-                displayInformation.physical = {
-                    width: display.size.width / displayInformation.ppcm.width,
-                    height: display.size.height / displayInformation.ppcm.height,
-                };
-                displayInformation.pixel = {
-                    width: display.size.width,
-                    height: display.size.height,
-                };
-
-                break;
+        if (oto_core.supported.indexOf(os.platform()) !== -1) {
+            displayInformation = OTO_Addon.detectScreenSize(display.id);
+            console.log(displayInformation);
+        } else {
+            displayInformation = {}
+            displayInformation.ppcm = {
+                horizontal: 28.34,
+                vertical: 28.34,
+            };
+            displayInformation.physical = {
+                width: display.size.width / displayInformation.ppcm.width,
+                height: display.size.height / displayInformation.ppcm.height,
+            };
+            displayInformation.pixel = {
+                width: display.size.width,
+                height: display.size.height,
+            };
         }
 
         return displayInformation;
      }
 };
 
-var one_to_one = {
+const one_to_one = {
 
     /**
      * Get the pixels per centimetre of a screen.
@@ -124,7 +83,7 @@ var one_to_one = {
       */
     ppi: function (display) {
         display = display || oto_util.getBrowserWindowDisplay();
-        var ppcm = oto_core.getDisplayInformation(display).ppcm;
+        const ppcm = oto_core.getDisplayInformation(display).ppcm;
         return {
             horizontal: oto_util.cmToInch(ppcm.horizontal),
             vertical: oto_util.cmToInch(ppcm.vertical),

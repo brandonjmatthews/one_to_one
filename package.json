@@ -1,10 +1,12 @@
 {
   "name": "one_to_one",
   "version": "0.3.0",
-  "description": "Electron module to collect the physical display information using native binaries.",
+  "description": "Electron module to collect the physical display information using native binaries. Requires Node version < 8",
   "main": "index.js",
   "scripts": {
-    "buildTest": "node test/build.js"
+    "electron-build": "HOME=~/.electron-gyp node-gyp rebuild --arch=x64 --target=1.7.2 --dist-url=https://atom.io/download/electron",
+    "node-build": "node-gyp rebuild --debug",
+    "build-test": "node test/build.js"
   },
   "keywords": [
     "dpi",
@@ -18,5 +20,9 @@
     "electron": "^1.6.1"
   },
   "author": "Brandon Matthews",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "bindings": "^1.2.1",
+    "nan": "^2.6.2"
+  }
 }
