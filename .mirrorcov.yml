@@ -1,0 +1,114 @@
+
+Code48K
+Commits43
+Issues2
+Marketplace0
+Topics0
+Wikis0
+Users0
+Languages
+42,252 HTML
+1,288 Text
+641 JSON
+508 CSV
+292 Python
+211 Ruby
+182 XML
+144 Markdown
+132 Java
+80 Objective-C
+Advanced search 
+48,050 code results
+@ishasahni1
+ishasahni1/Loc-markdig-azuredocs-test – active-directory-saas-lifesize-cloud-tutorial.md
+Showing the top three matches Last indexed on Jul 13, 2018
+Markdown
+---
+title: 'Tutorial: Azure Active Directory integration with Lifesize Cloud | Microsoft Docs'
+   >Please note that these are not the real values. you have to update these values with the actual Sign-On URL, Relay State, and Identifier. Contact [Lifesize Cloud Client support team](https://www.lifesize.com/support) to get Sign-On URL, and Identifier values and you can get Relay State  value from SSO Configuration that is explained later in the tutorial.
+@MicrosoftDocs
+MicrosoftDocs/azure-docs.ru-ru – lifesize-cloud-tutorial.md
+Showing the top five matches Last indexed 8 days ago
+Markdown
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* Подписка Lifesize Cloud с поддержкой единого входа.
+    > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом входа, идентификатором и состоянием ретранслятора. Обратитесь в [группу поддержки клиентов Lifesize Cloud](https://www.lifesize.com/en/support) для получения URL-адреса входа и значений идентификаторов, а также значения состояния ретрансляции из конфигурации единого входа, которое описывается далее в этом руководстве. Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+@MicrosoftDocs
+MicrosoftDocs/azure-docs.ja-jp – lifesize-cloud-tutorial.md
+Showing the top four matches Last indexed 8 days ago
+Markdown
+Azure サブスクリプションをお持ちでない場合は、開始する前に[無料アカウントを作成](https://azure.microsoft.com/free/)してください。
+
+## <a name="prerequisites"></a>前提条件
+
+Lifesize Cloud と Azure AD の統合を構成するには、次のものが必要です。
+1. [Azure portal](https://portal.azure.com/) の **Lifesize Cloud** アプリケーション統合ページで、**[シングル サインオン]** を選択します。
+
+    ![シングル サインオン構成のリンク](common/select-sso.png)
+@OpenLocalizationTestOrg
+OpenLocalizationTestOrg/azure-docs-pr15_es-ES – active-directory-saas-lifesize-cloud-tutorial.md
+Showing the top two matches Last indexed on Jul 8, 2018
+Markdown
+<properties
+    pageTitle="Tutorial: Integración de Azure Active Directory con la nube Lifesize | Microsoft Azure"
+    description="Obtenga información sobre cómo configurar el inicio de sesión único entre Azure Active Directory y nube de Lifesize."
+    services="active-directory"
+@OpenLocalizationTestOrg
+OpenLocalizationTestOrg/azure-docs-pr15_zh-HK – active-directory-saas-lifesize-cloud-tutorial.md
+Showing the top three matches Last indexed on Jul 8, 2018
+Markdown
+<properties
+    pageTitle="教程︰ Azure Active Directory 集成 Lifesize 云与 |Microsoft Azure"
+    ![配置单一登录](./media/active-directory-saas-lifesize-cloud-tutorial/tutorial_lifesizecloud_04.png) 
+
+    一。 在**符号上 URL**文本框中，键入您登录到 Lifesize 云应用程序使用以下模式用户使用的 URL: **https://login.lifesizecloud.com/ls/?acs**。
+@AcadAcclerator
+AcadAcclerator/acadaccbootcamp.github.io – active-directory-saas-lifesize-cloud-tutorial.md
+Showing the top four matches Last indexed on Jul 12, 2018
+Markdown
+---
+title: 'Tutorial: Azure Active Directory integration with Lifesize Cloud | Microsoft Docs'
+   >Please note that these are not the real values. you have to update these values with the actual Sign-On URL, Relay State, and Identifier. Contact [Lifesize Cloud Client support team](https://www.lifesize.com/support) to get Sign-On URL, and Identifier values and you can get Relay State  value from SSO Configuration that is explained later in the tutorial.
+@MicrosoftDocs
+MicrosoftDocs/azure-docs.pt-pt – lifesize-cloud-tutorial.md
+Showing the top five matches Last indexed 9 days ago
+Markdown
+---
+title: 'Tutorial: Integração do Active Directory do Azure com a nuvem Lifesize | Documentos da Microsoft'
+# <a name="tutorial-azure-active-directory-integration-with-lifesize-cloud"></a>Tutorial: Integração do Active Directory do Azure com a nuvem Lifesize
+
+Neste tutorial, saiba como integrar Lifesize Cloud no Azure Active Directory (Azure AD).
+@MicrosoftDocs
+MicrosoftDocs/azure-docs.nl-nl – lifesize-cloud-tutorial.md
+Showing the top four matches Last indexed 2 days ago
+Markdown
+1. Ga in de [Azure-portal](https://portal.azure.com/) naar de overzichtspagina van de integratie voor **Lifesize Cloud** en selecteer **Eenmalige aanmelding**.
+    > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke aanmeldings-URL, id en relaystatus. Neem contact op met het [klantondersteuningsteam van Lifesize Cloud](https://www.lifesize.com/en/support) om de aanmeldings-URL en id op te vragen. De waarde voor de relaystatus kunt u opzoeken in de SSO-configuratie. Dit wordt later in de zelfstudie uitgelegd. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
+@pr14m1990
+pr14m1990/cask – lifesize.rb
+Showing the top three matches Last indexed on Nov 8, 2018
+Ruby
+  # cdn.lifesizecloud.com was verified as official when first introduced to the cask
+  url "https://cdn.lifesizecloud.com/LifesizeCloud-#{version}-signed.pkg"
+  appcast 'https://cdn.lifesizecloud.com/OSX_Clients/Sparkle_Upgrades/LifesizeAppcast.xml'
+  name 'lifesize'
+  homepage 'https://www.lifesize.com/'
+@MicrosoftDocs
+MicrosoftDocs/azure-docs.it-it – lifesize-cloud-tutorial.md
+Showing the top four matches Last indexed 8 days ago
+Markdown
+* Una sottoscrizione di Azure AD. Se non si dispone di un ambiente Azure AD, è possibile ottenere una versione di valutazione di un mese [qui](https://azure.microsoft.com/pricing/free-trial/)
+* Sottoscrizione di Lifesize Cloud abilitata per l'accesso Single Sign-On
+1. Nella pagina di integrazione dell'applicazione **Lifesize Cloud** del [portale di Azure](https://portal.azure.com/) selezionare **Single Sign-On**.
+© 2019 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
